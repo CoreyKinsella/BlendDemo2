@@ -4,8 +4,6 @@
 #include "../../Common/MathHelper.h"
 #include "../../Common/UploadBuffer.h"
 
-#include <cmath>
-
 struct ObjectConstants
 {
     DirectX::XMFLOAT4X4 World = MathHelper::Identity4x4();
@@ -34,9 +32,8 @@ struct PassConstants
 	DirectX::XMFLOAT4 FogColor = { 0.7f, 0.7f, 0.7f, 1.0f };
 	float gFogStart = 5.0f;
 	float gFogRange = 150.0f;
-
     float d = 145;
-    float s = (d-gFogStart) / gFogRange ;
+    float s = (d - gFogStart) / gFogRange;
     float power = d * s;
 
     float gFog = 1 / exp(power);
